@@ -1,0 +1,13 @@
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\bin\Debug\Lab3.View.exe.config
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\bin\Debug\Lab3.View.exe
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\bin\Debug\Lab3.View.pdb
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\bin\Debug\Lab3.dll
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\bin\Debug\Lab3.pdb
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.csprojResolveAssemblyReference.cache
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.Form1.resources
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.Properties.Resources.resources
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.csproj.GenerateResource.cache
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.csproj.CoreCompileInputs.cache
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.csproj.CopyComplete
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.exe
+C:\Users\a1mos\source\repos\Lab3\Lab3.View\obj\Debug\Lab3.View.pdb
