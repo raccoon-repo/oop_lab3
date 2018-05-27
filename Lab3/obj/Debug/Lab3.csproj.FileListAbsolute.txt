@@ -1,6 +1,6 @@
-C:\Users\a1mos\source\repos\Lab3\Lab3\bin\Debug\Lab3.pdb
-C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
-C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.pdb
 C:\Users\a1mos\source\repos\Lab3\Lab3\bin\Debug\Lab3.dll
-C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.dll
+C:\Users\a1mos\source\repos\Lab3\Lab3\bin\Debug\Lab3.pdb
 C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.csprojResolveAssemblyReference.cache
+C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
+C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.dll
+C:\Users\a1mos\source\repos\Lab3\Lab3\obj\Debug\Lab3.pdb

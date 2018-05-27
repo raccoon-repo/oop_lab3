@@ -4,9 +4,18 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.TwoDimensional
 {
-    public class Square : AngularShape
+    public class Square : AngularShape, ITwoDimensionalShape
     {
         private float _length;
+
+        /**
+         * Alignment of verticies
+         * 
+         *  1_______2
+         *  |       |
+         *  |_______|
+         *  0       3
+         */
 
         public float Length
         {
@@ -58,12 +67,12 @@ namespace Lab3.Shapes.TwoDimensional
             Vertices.Vertices[0].Y = y;
 
             Vertices.Vertices[1].X = x;
-            Vertices.Vertices[1].Y = Vertices.Vertices[1].Y + y;
+            Vertices.Vertices[1].Y = _length + y;
 
-            Vertices.Vertices[2].X = Vertices.Vertices[2].X + x;
-            Vertices.Vertices[2].Y = Vertices.Vertices[2].Y + y;
+            Vertices.Vertices[2].X = _length + x;
+            Vertices.Vertices[2].Y = _length + y;
 
-            Vertices.Vertices[3].X = Vertices.Vertices[3].X + x;
+            Vertices.Vertices[3].X = _length + x;
             Vertices.Vertices[3].Y = y;
         }
 

@@ -9,7 +9,7 @@ namespace Lab3.Shapes
     {
         public IDrawer Drawer { get; set; }
         private VertexConnections vertices = new VertexConnections();
-        public bool IsShaded { get; set; }
+        public bool IsShaded { get; protected set; }
         public VertexConnections Vertices
         {
             get => vertices;

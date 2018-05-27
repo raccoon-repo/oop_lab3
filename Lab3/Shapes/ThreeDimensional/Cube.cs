@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
 {
-    public class Cube : AngularShape
+    public class Cube : AngularShape, IThreeDimensionalShape
     {
         private float _length;
 
@@ -77,31 +77,38 @@ namespace Lab3.Shapes.ThreeDimensional
 
         public override void Move(float x, float y, float z)
         {
-            var vertecies = Vertices.Vertices;
+            var vertices = Vertices.Vertices;
+            vertices[0].X = x;
+            vertices[0].Y = y;
+            vertices[0].Z = z;
 
-            vertecies[0].X = x; vertecies[0].Y = y;
-            vertecies[0].Z = z;
+            vertices[1].X = x + _length;
+            vertices[1].Y = y;
+            vertices[1].Z = z;
 
-            vertecies[1].X = vertecies[1].X + x; vertecies[0].Y = y;
-            vertecies[1].Z = z;
+            vertices[2].X = x + _length;
+            vertices[2].Y = y + _length;
+            vertices[2].Z = z;
 
-            vertecies[2].X = vertecies[2].X + x; vertecies[2].Y = vertecies[2].Y + y;
-            vertecies[2].Z = z;
+            vertices[3].X = x;
+            vertices[3].Y = y + _length;
+            vertices[3].Z = z;
 
-            vertecies[3].X = x; vertecies[3].Y = Vertices[3].Y + y;
-            vertecies[3].Z = z;
+            vertices[4].X = x;
+            vertices[4].Y = y;
+            vertices[4].Z = z + _length;
 
-            vertecies[4].X = x; vertecies[4].Y = y;
-            vertecies[4].Z = vertecies[4].Z + z;
+            vertices[5].X = x + _length;
+            vertices[5].Y = y;
+            vertices[5].Z = z + _length;
 
-            vertecies[5].X = vertecies[5].X + x; vertecies[5].Y = y;
-            vertecies[5].Z = vertecies[5].Z + z;
+            vertices[6].X = x + _length;
+            vertices[6].Y = y + _length;
+            vertices[6].Z = z + _length;
 
-            vertecies[6].X = vertecies[6].X + x; vertecies[6].Y = vertecies[6].Y + y;
-            vertecies[6].Z = vertecies[6].Z + z;
-
-            vertecies[7].X = x; vertecies[7].Y = Vertices[7].Y + y;
-            vertecies[3].Z = vertecies[7].Z + z;
+            vertices[7].X = x;
+            vertices[7].Y = y + _length;
+            vertices[7].Z = z + _length;
         }
 
         public override float Perimeter()

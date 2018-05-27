@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
 {
-    public class RectangularParallelepiped : AngularShape
+    public class RectangularParallelepiped : AngularShape, IThreeDimensionalShape
     {
         private float _width;
         private float _height;
@@ -53,7 +53,10 @@ namespace Lab3.Shapes.ThreeDimensional
                                          float length, float width, 
                                          float height)
         {
-            
+            _height = height;
+            _length = length;
+            _width = width;
+
             Vertices = new VertexConnections
             {
                 Connections = new Dictionary<byte, byte[]>(8)
@@ -95,29 +98,37 @@ namespace Lab3.Shapes.ThreeDimensional
         {
             var vertices = Vertices.Vertices;
 
-            vertices[0].X = x; vertices[0].Y = y;
+            vertices[0].X = x;
+            vertices[0].Y = y;
             vertices[0].Z = z;
 
-            vertices[1].X = vertices[1].X + x; vertices[0].Y = y;
+            vertices[1].X = x + _length;
+            vertices[1].Y = y;
             vertices[1].Z = z;
 
-            vertices[2].X = vertices[2].X + x; vertices[2].Y = vertices[2].Y + y;
+            vertices[2].X = x + _length;
+            vertices[2].Y = y + _width;
             vertices[2].Z = z;
 
-            vertices[3].X = x; vertices[3].Y = Vertices[3].Y + y;
+            vertices[3].X = x;
+            vertices[3].Y = y + _width;
             vertices[3].Z = z;
 
-            vertices[4].X = x; vertices[4].Y = y;
-            vertices[4].Z = vertices[4].Z + z;
+            vertices[4].X = x;
+            vertices[4].Y = y;
+            vertices[4].Z = z  + _height;
 
-            vertices[5].X = vertices[5].X + x; vertices[5].Y = y;
-            vertices[5].Z = vertices[5].Z + z;
+            vertices[5].X = x + _length;
+            vertices[5].Y = y;
+            vertices[5].Z = z + _height;
 
-            vertices[6].X = vertices[6].X + x; vertices[6].Y = vertices[6].Y + y;
-            vertices[6].Z = vertices[6].Z + z;
+            vertices[6].X = x + _length;
+            vertices[6].Y = y + _width;
+            vertices[6].Z = z + _height;
 
-            vertices[7].X = x; vertices[7].Y = Vertices[7].Y + y;
-            vertices[3].Z = vertices[7].Z + z;
+            vertices[7].X = x;
+            vertices[7].Y = y + _width;
+            vertices[7].Z = z + _height;
         }
 
         public override void Scale(float fraction)

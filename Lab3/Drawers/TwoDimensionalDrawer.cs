@@ -4,7 +4,7 @@ using Lab3.Vertecies;
 
 namespace Lab3.Drawers
 {
-    public class WinFormDrawer : IDrawer
+    public class TwoDimensionalDrawer : IDrawer
     {
         private Graphics _graphics;
         private Pen _pen;
@@ -15,20 +15,22 @@ namespace Lab3.Drawers
             set => _graphics = value;
         }
 
-        public WinFormDrawer()
+        public TwoDimensionalDrawer()
         {
             _pen = new Pen(Color.Black, 2);
         }
 
         public void Draw(AngularShape shape)
         {
+            if (!(shape is ITwoDimensionalShape))
+                return;
+
             var verteciesConnections = shape.Vertices;
             var verticies = verteciesConnections.Vertices;
             var connections = verteciesConnections.Connections;
 
             Point p1, p2;
             Vertex v1, v2;
-            var fraction = 0.5;
 
             for (byte i = 0; i < verticies.Length; i++)
             {
@@ -40,8 +42,8 @@ namespace Lab3.Drawers
                 foreach (var connection in connections[i])
                 {
                     v2 = verticies[connection];
-                    p1 = new Point((int)v1.X - (int)(v1.Z * fraction), (int)v1.Y + (int)(v1.Z * fraction));
-                    p2 = new Point((int)v2.X - (int)(v2.Z * fraction), (int)v2.Y + (int)(v2.Z * fraction));
+                    p1 = new Point((int)v1.X, (int)v1.Y);
+                    p2 = new Point((int)v2.X, (int)v2.Y);
 
                     _graphics.DrawLine(_pen, p1, p2);
                 }

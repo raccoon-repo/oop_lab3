@@ -1,5 +1,7 @@
 ﻿using Lab3.Drawers;
+using Lab3.Shapes;
 using Lab3.Shapes.ThreeDimensional;
+using Lab3.Shapes.TwoDimensional;
 using System;
 using System.Windows.Forms;
 
@@ -7,29 +9,39 @@ namespace Lab3.View
 {
     public partial class Form1 : Form
     {
-        WinFormDrawer drawer;
+        private TwoDimensionalDrawer twoDimensional;
+        private ThreeDimensionalDrawer threeDimensional;
+        AngularShape shape;
+
         public Form1()
         {
             InitializeComponent();
-            drawer = new WinFormDrawer() {
+            twoDimensional = new TwoDimensionalDrawer() {
+                Graphics = CreateGraphics()
+            };
+
+            threeDimensional = new ThreeDimensionalDrawer() {
                 Graphics = CreateGraphics()
             };
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var cube = new Cube(50, 50, 0, 50) { Drawer = drawer };
-            var recpar = new RectangularParallelepiped(50, 50, 0, 50, 100, 75)
-            { Drawer = drawer };
+            shape = new Pyramid(60, 60, 100);
+            threeDimensional.Draw(shape);
+        }
 
-            recpar.Draw();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            float x, y, z;
+            float.TryParse(textBox1.Text, out x);
+            float.TryParse(textBox2.Text, out y);
+            float.TryParse(textBox3.Text, out z);
 
-            //var g = CreateGraphics();
-            //var p1 = new Point(5, 5);
-            //var p2 = new Point(5, 30);
-            //var pen = new Pen(Color.Red, 5);
-            //g.DrawLine(pen, p1, p2);
-            
+            shape.Move(x, y, z);
+            threeDimensional.Graphics.Clear(System.Drawing.Color.White);
+            threeDimensional.Draw(shape);
+
         }
     }
 }

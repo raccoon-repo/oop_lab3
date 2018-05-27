@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.TwoDimensional
 {
-    public class Rectangle : AngularShape
+    public class Rectangle : AngularShape, ITwoDimensionalShape
     {
 
-        private float _height;
+        private float _length;
         private float _width;
 
-        public float Height
+        public float Length
         {
-            get => _height;
+            get => _length;
             set {
                 if (value < 0)
                     return;
@@ -33,7 +33,7 @@ namespace Lab3.Shapes.TwoDimensional
         }
 
         /**
-         * Alignment of vericies
+         * Alignment of verticies
          * 
          *  1_______2
          *  |       |
@@ -46,16 +46,16 @@ namespace Lab3.Shapes.TwoDimensional
 
         public Rectangle(float x, float y, float length, float width)
         {
-            _height = width;
-            _width = length;
+            _length = length;
+            _width = width;
 
             Vertices = new VertexConnections
             {
                 Vertices = new Vertex[4]
                 {
                     new Vertex { X = x, Y = y, Z = 0 },
-                    new Vertex { X = x, Y = y + width, Z = 0},
-                    new Vertex { X = x + length, Y = y + width, Z = 0},
+                    new Vertex { X = x, Y = y + width, Z = 0 },
+                    new Vertex { X = x + length, Y = y + width, Z = 0 },
                     new Vertex { X = x + length, Y = y, Z = 0 }
                 },
 
@@ -70,12 +70,12 @@ namespace Lab3.Shapes.TwoDimensional
 
         public override float Area()
         {
-            return _height * _width;
+            return _length * _width;
         }
 
         public override float Perimeter()
         {
-            return (_height  + _width) * 2.0f;
+            return (_length  + _width) * 2.0f;
         }
 
         public override void Move(float x, float y, float z)
@@ -84,25 +84,25 @@ namespace Lab3.Shapes.TwoDimensional
             Vertices.Vertices[0].Y = y;
 
             Vertices.Vertices[1].X = x;
-            Vertices.Vertices[1].Y = Vertices.Vertices[1].Y + y;
+            Vertices.Vertices[1].Y = _width + y;
 
-            Vertices.Vertices[2].X = Vertices.Vertices[2].X + x;
-            Vertices.Vertices[2].Y = Vertices.Vertices[2].Y + y;
+            Vertices.Vertices[2].X = _length + x;
+            Vertices.Vertices[2].Y = _width + y;
 
-            Vertices.Vertices[3].X = Vertices.Vertices[3].X + x;
+            Vertices.Vertices[3].X = _length + x;
             Vertices.Vertices[3].Y = y;
         }
 
         public override void Scale(float fraction)
         {
-            Height = _height * fraction;
+            Length = _length * fraction;
             Width = _width * fraction;
         }
 
 
         public override string ToString()
         {
-            return "{ \"Height\": \"" + _height +  "\", \"Width\": \"" + _width + "\"}";
+            return "{ \"Height\": \"" + _length +  "\", \"Width\": \"" + _width + "\"}";
         }
     }
 }

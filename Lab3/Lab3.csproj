@@ -44,11 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Drawers\WinFormDrawer.cs" />
+    <Compile Include="Drawers\ThreeDimensionalDrawer.cs" />
+    <Compile Include="Drawers\TwoDimensionalDrawer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Drawers\IDrawer.cs" />
+    <Compile Include="Shapes\ThreeDimensionalShape.cs" />
     <Compile Include="Shapes\ThreeDimensional\Cube.cs" />
+    <Compile Include="Shapes\ThreeDimensional\Pyramid.cs" />
     <Compile Include="Shapes\ThreeDimensional\RectangularParallelepiped.cs" />
+    <Compile Include="Shapes\TwoDimensionalShape.cs" />
     <Compile Include="Shapes\TwoDimensional\Rectangle.cs" />
     <Compile Include="Shapes\TwoDimensional\ShadedRectangle.cs" />
     <Compile Include="Shapes\AngularShape.cs" />
