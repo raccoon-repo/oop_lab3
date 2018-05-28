@@ -1,7 +1,5 @@
 ﻿using Lab3.Drawers;
-using Lab3.Vertecies;
-using System;
-using System.Collections.Generic;
+using Lab3.Vertices;
 
 namespace Lab3.Shapes
 {
@@ -20,6 +18,10 @@ namespace Lab3.Shapes
         {
             Drawer.Draw(this);
         }
+
+        public float OffsetX { get; protected set; }
+        public float OffsetY { get; protected set; }
+        public float OffsetZ { get; protected set; }
 
         public abstract float Area();
         public abstract float Perimeter();

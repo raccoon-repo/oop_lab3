@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Lab3.Vertecies
+namespace Lab3.Vertices
 {
     public struct Vertex
     {

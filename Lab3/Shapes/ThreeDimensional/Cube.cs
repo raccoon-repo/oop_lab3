@@ -1,4 +1,4 @@
-﻿using Lab3.Vertecies;
+﻿using Lab3.Vertices;
 using System;
 using System.Collections.Generic;
 
@@ -43,6 +43,10 @@ namespace Lab3.Shapes.ThreeDimensional
         public Cube(float x, float y, float z, float length)
         {
             _length = length;
+
+            OffsetX = x;
+            OffsetY = y;
+            OffsetZ = z;
             Vertices = new VertexConnections
             {
                 Connections = new Dictionary<byte, byte[]>(8)
@@ -119,6 +123,11 @@ namespace Lab3.Shapes.ThreeDimensional
         public override void Scale(float fraction)
         {
             Length = _length * fraction;
+        }
+
+        public override string ToString()
+        {
+            return $"{{\"shape\": \"cube\", \"length\": \"{_length}\"}}";
         }
     }
 }

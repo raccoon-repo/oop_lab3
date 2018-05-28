@@ -44,10 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawers\IImageDrawer.cs" />
+    <Compile Include="Drawers\ImageDrawer.cs" />
+    <Compile Include="Drawers\ShadedRectangleDrawer.cs" />
     <Compile Include="Drawers\ThreeDimensionalDrawer.cs" />
     <Compile Include="Drawers\TwoDimensionalDrawer.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Drawers\IDrawer.cs" />
+    <Compile Include="Shapes\IShadedShape.cs" />
     <Compile Include="Shapes\ThreeDimensionalShape.cs" />
     <Compile Include="Shapes\ThreeDimensional\Cube.cs" />
     <Compile Include="Shapes\ThreeDimensional\Pyramid.cs" />
@@ -57,8 +62,8 @@
     <Compile Include="Shapes\TwoDimensional\ShadedRectangle.cs" />
     <Compile Include="Shapes\AngularShape.cs" />
     <Compile Include="Shapes\TwoDimensional\Square.cs" />
-    <Compile Include="Vertecies\Vertex.cs" />
-    <Compile Include="Vertecies\VertexConnections.cs" />
+    <Compile Include="Vertices\Vertex.cs" />
+    <Compile Include="Vertices\VertexConnections.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
 ﻿
 using Lab3.Shapes;
-using Lab3.Vertecies;
+using Lab3.Vertices;
 using System;
 using System.Drawing;
 
@@ -58,8 +58,8 @@ namespace Lab3.Drawers
                 {
                     v2 = vertices[connection];
 
-                    p1 = new Point((int)(v1.X * COS_ALPHA + v1.Y), (int)(v1.X * SIN_ALPHA - v1.Z));
-                    p2 = new Point((int)(v2.X * COS_ALPHA + v2.Y), (int)(v2.X * SIN_ALPHA - v2.Z));
+                    p1 = new Point((int)(v1.X * COS_ALPHA * 0.9f + v1.Y), (int)((v1.X * SIN_ALPHA * 0.5f - v1.Z) * 0.9f));
+                    p2 = new Point((int)(v2.X * COS_ALPHA * 0.9f + v2.Y), (int)((v2.X * SIN_ALPHA * 0.5f - v2.Z) * 0.9f));
 
                     Graphics.DrawLine(Pen, p1, p2);
                 }

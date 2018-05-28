@@ -1,4 +1,4 @@
-﻿using Lab3.Vertecies;
+﻿using Lab3.Vertices;
 using System;
 using System.Collections.Generic;
 
@@ -36,6 +36,10 @@ namespace Lab3.Shapes.TwoDimensional
 
         public Square(float x, float y, float length)
         {
+
+            OffsetX = x;
+            OffsetY = y;
+            OffsetZ = 0;
             _length = length;
 
             Vertices = new VertexConnections
@@ -84,6 +88,11 @@ namespace Lab3.Shapes.TwoDimensional
         public override void Scale(float fraction)
         {
             Length = _length * fraction;
+        }
+
+        public override string ToString()
+        {
+            return $"{{\"shape\":\"square\", \"length\":\"{_length}\"}}";
         }
     }
 }

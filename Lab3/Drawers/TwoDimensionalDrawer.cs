@@ -1,23 +1,17 @@
 ﻿using System.Drawing;
 using Lab3.Shapes;
-using Lab3.Vertecies;
+using Lab3.Vertices;
 
 namespace Lab3.Drawers
 {
     public class TwoDimensionalDrawer : IDrawer
     {
-        private Graphics _graphics;
-        private Pen _pen;
-
-        public Graphics Graphics
-        {
-            get => _graphics;
-            set => _graphics = value;
-        }
+        public Graphics Graphics { get; set; }
+        public Pen Pen { get; set; } 
 
         public TwoDimensionalDrawer()
         {
-            _pen = new Pen(Color.Black, 2);
+            Pen = new Pen(Color.Black, 2);
         }
 
         public void Draw(AngularShape shape)
@@ -45,7 +39,7 @@ namespace Lab3.Drawers
                     p1 = new Point((int)v1.X, (int)v1.Y);
                     p2 = new Point((int)v2.X, (int)v2.Y);
 
-                    _graphics.DrawLine(_pen, p1, p2);
+                    Graphics.DrawLine(Pen, p1, p2);
                 }
             }
         }

@@ -2,19 +2,13 @@
 
 namespace Lab3.Shapes.TwoDimensional
 {
-    public class ShadedRectangle : Rectangle, ITwoDimensionalShape
+    public class ShadedRectangle : Rectangle, ITwoDimensionalShape, IShadedShape
     {
         public ShadedRectangle(float length, float width) 
-        : base(length, width)
-        {
-            IsShaded = true;
-        }
+        : base(length, width) {}
 
         public ShadedRectangle(float x, float y, float z, float length, float width) 
-        : base(x, y, length, width)
-        {
-            IsShaded = true;
-        }
+        : base(x, y, length, width) { }
         
     }
 }

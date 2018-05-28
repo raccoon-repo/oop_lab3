@@ -1,4 +1,4 @@
-﻿using Lab3.Vertecies;
+﻿using Lab3.Vertices;
 using System;
 using System.Collections.Generic;
 
@@ -46,6 +46,10 @@ namespace Lab3.Shapes.TwoDimensional
 
         public Rectangle(float x, float y, float length, float width)
         {
+            OffsetX = x;
+            OffsetY = y;
+            OffsetZ = 0;
+
             _length = length;
             _width = width;
 
@@ -75,7 +79,7 @@ namespace Lab3.Shapes.TwoDimensional
 
         public override float Perimeter()
         {
-            return (_length  + _width) * 2.0f;
+            return (_length + _width) * 2.0f;
         }
 
         public override void Move(float x, float y, float z)
@@ -102,7 +106,7 @@ namespace Lab3.Shapes.TwoDimensional
 
         public override string ToString()
         {
-            return "{ \"Height\": \"" + _length +  "\", \"Width\": \"" + _width + "\"}";
+            return $"{{ \"shape\": \"rectangle\", \"width\": \"{_width}\", \"length\":\"{_length}\"}}";
         }
     }
 }

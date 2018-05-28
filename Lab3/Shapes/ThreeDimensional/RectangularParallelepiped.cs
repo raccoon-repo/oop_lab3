@@ -1,5 +1,5 @@
 ﻿
-using Lab3.Vertecies;
+using Lab3.Vertices;
 using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
@@ -53,6 +53,10 @@ namespace Lab3.Shapes.ThreeDimensional
                                          float length, float width, 
                                          float height)
         {
+            OffsetX = x;
+            OffsetY = y;
+            OffsetZ = z;
+
             _height = height;
             _length = length;
             _width = width;
@@ -136,6 +140,12 @@ namespace Lab3.Shapes.ThreeDimensional
             Height = _height * fraction;
             Width = _width * fraction;
             Length = _length * fraction;
+        }
+
+        public override string ToString()
+        {
+            return $"{{\"shape\": \"rectangular paralellepiped\", \"width\": \"{_width}\", " +
+                $"\"height\": \"{_height}\", \"length\": \"{_length}\"}}";
         }
     }
 }

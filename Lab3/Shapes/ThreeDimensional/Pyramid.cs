@@ -1,5 +1,5 @@
 ﻿using Lab3.Shapes.TwoDimensional;
-using Lab3.Vertecies;
+using Lab3.Vertices;
 using System;
 using System.Collections.Generic;
 
@@ -52,6 +52,10 @@ namespace Lab3.Shapes.ThreeDimensional
         {
             if (width < 0 || length < 0 || height < 0)
                 throw new ArgumentException("Length and width and height must pe positive number");
+
+            OffsetX = x;
+            OffsetY = y;
+            OffsetZ = z;
 
             _height = height;
             _length = length;
@@ -137,6 +141,12 @@ namespace Lab3.Shapes.ThreeDimensional
         public override void Scale(float fraction)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"{{\"shape\": \"pyramid\", \"width\": \"{_width}\", " +
+                $"\"height\": \"{_height}\", \"length\": \"{_length}\"}}";
         }
     }
 }
