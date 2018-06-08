@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
 {
+    [Serializable]
     public class Pyramid : AngularShape, IThreeDimensionalShape
     {
 
@@ -43,6 +44,8 @@ namespace Lab3.Shapes.ThreeDimensional
                 Vertices.Vertices[2].X = value;
             }
         }
+
+        public Pyramid() { }
 
         public Pyramid(float width, float length, float height)
         : this(0, 0, 0, width, length, height) { }
@@ -104,7 +107,10 @@ namespace Lab3.Shapes.ThreeDimensional
 
         public override float Area()
         {
-            throw new NotImplementedException();
+            var sideEdge = CalculateSideEdge();
+
+            return (float)(_width * _length + 2 * (Math.Sqrt(sideEdge - Math.Pow(_width, 2) / 4) * _width)
+                                     + 2 * (Math.Sqrt(sideEdge - Math.Pow(_length, 2) / 4) * _length));
         }
 
         public override void Move(float x, float y, float z)
@@ -135,12 +141,20 @@ namespace Lab3.Shapes.ThreeDimensional
 
         public override float Perimeter()
         {
-            throw new NotImplementedException();
+            return (_width + _length) * 2 + CalculateSideEdge() * 4;   
+        }
+
+        private float CalculateSideEdge()
+        {
+            return (float)Math.Sqrt((Math.Pow(_width, 2) + Math.Pow(_length, 2)) / 4 + Math.Pow(_height, 2));
+
         }
 
         public override void Scale(float fraction)
         {
-            throw new NotImplementedException();
+            Width = _width * fraction;
+            Height = _height * fraction;
+            Length = _length * fraction;
         }
 
         public override string ToString()

@@ -1,11 +1,7 @@
 ﻿using Lab3.Shapes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Lab3.Drawers;
 
-namespace Lab3.Drawers
+namespace Lab3.Images.Drawers
 {
     public class ImageDrawer : IImageDrawer
     {

@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Drawers\IImageDrawer.cs" />
-    <Compile Include="Drawers\ImageDrawer.cs" />
+    <Compile Include="Images\IImageDrawer.cs" />
+    <Compile Include="Images\IImageSerializator.cs" />
+    <Compile Include="Images\ImageDrawer.cs" />
     <Compile Include="Drawers\ShadedRectangleDrawer.cs" />
     <Compile Include="Drawers\ThreeDimensionalDrawer.cs" />
     <Compile Include="Drawers\TwoDimensionalDrawer.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="Images\Image.cs" />
+    <Compile Include="Images\ImageSerializator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Drawers\IDrawer.cs" />
     <Compile Include="Shapes\IShadedShape.cs" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.TwoDimensional
 {
+    [Serializable]
     public class Rectangle : AngularShape, ITwoDimensionalShape
     {
 
@@ -40,6 +41,8 @@ namespace Lab3.Shapes.TwoDimensional
          *  |_______|
          *  0       3
          */
+
+        public Rectangle() { }
 
         public Rectangle(float length, float width)
         : this(0, 0, length, width) { }

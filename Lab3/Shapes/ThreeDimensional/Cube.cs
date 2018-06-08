@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
 {
+    [Serializable]
     public class Cube : AngularShape, IThreeDimensionalShape
     {
         private float _length;
@@ -70,6 +71,8 @@ namespace Lab3.Shapes.ThreeDimensional
                 }
             };
         }
+
+        public Cube() { }
 
         public Cube(float length)
         : this(0, 0, 0, length){ }

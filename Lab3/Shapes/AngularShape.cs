@@ -1,8 +1,10 @@
 ﻿using Lab3.Drawers;
 using Lab3.Vertices;
+using System;
 
 namespace Lab3.Shapes
 {
+    [Serializable]
     public abstract class AngularShape
     {
         public IDrawer Drawer { get; set; }

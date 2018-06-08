@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab3.Shapes.TwoDimensional
 {
+    [Serializable]
     public class Square : AngularShape, ITwoDimensionalShape
     {
         private float _length;
@@ -30,6 +31,8 @@ namespace Lab3.Shapes.TwoDimensional
                 Vertices.Vertices[1].Y = value;
             }
         }
+
+        public Square() { }
 
         public Square(float length)
         : this (0, 0, length) { }

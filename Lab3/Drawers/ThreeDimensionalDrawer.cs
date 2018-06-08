@@ -47,7 +47,7 @@ namespace Lab3.Drawers
             var vertices = shape.Vertices.Vertices;
             var connections = shape.Vertices.Connections;
 
-            Point p1, p2;
+            PointF p1, p2;
             Vertex v1, v2;
 
             for (byte i = 0; i < vertices.Length; i++)
@@ -58,8 +58,8 @@ namespace Lab3.Drawers
                 {
                     v2 = vertices[connection];
 
-                    p1 = new Point((int)(v1.X * COS_ALPHA * 0.9f + v1.Y), (int)((v1.X * SIN_ALPHA * 0.5f - v1.Z) * 0.9f));
-                    p2 = new Point((int)(v2.X * COS_ALPHA * 0.9f + v2.Y), (int)((v2.X * SIN_ALPHA * 0.5f - v2.Z) * 0.9f));
+                    p1 = new PointF((v1.X * COS_ALPHA * 0.9f + v1.Y), ((v1.X * SIN_ALPHA * 0.35f - v1.Z)));
+                    p2 = new PointF((v2.X * COS_ALPHA * 0.9f + v2.Y), ((v2.X * SIN_ALPHA * 0.35f - v2.Z)));
 
                     Graphics.DrawLine(Pen, p1, p2);
                 }

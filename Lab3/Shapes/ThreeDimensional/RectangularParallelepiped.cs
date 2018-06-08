@@ -1,9 +1,11 @@
 ﻿
 using Lab3.Vertices;
+using System;
 using System.Collections.Generic;
 
 namespace Lab3.Shapes.ThreeDimensional
 {
+    [Serializable]
     public class RectangularParallelepiped : AngularShape, IThreeDimensionalShape
     {
         private float _width;
@@ -48,6 +50,8 @@ namespace Lab3.Shapes.ThreeDimensional
                 vertices[6].X = value;
             }
         }
+
+        public RectangularParallelepiped() { }
 
         public RectangularParallelepiped(float x, float y, float z, 
                                          float length, float width, 

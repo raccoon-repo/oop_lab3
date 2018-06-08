@@ -1,4 +1,4 @@
-﻿namespace Lab3.Drawers
+﻿namespace Lab3.Images.Drawers
 {
     public interface IImageDrawer
     {

@@ -3,6 +3,7 @@
 
 namespace Lab3.Vertices
 {
+    [Serializable]
     public struct Vertex
     {
         public float X;

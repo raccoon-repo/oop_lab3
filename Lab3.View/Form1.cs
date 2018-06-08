@@ -3,8 +3,10 @@ using Lab3.Shapes;
 using Lab3.Shapes.ThreeDimensional;
 using Lab3.Shapes.TwoDimensional;
 using System;
+using Lab3.Images;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Lab3.Images.Drawers;
 
 namespace Lab3.View
 {
@@ -53,7 +55,7 @@ namespace Lab3.View
             var xParse = float.TryParse(textBox1.Text, out x);
             var yParse = float.TryParse(textBox2.Text, out y);
             var zParse = float.TryParse(textBox3.Text, out z);
-
+            
             var pyramid = new Pyramid(10, 200, -120, 100, 75, 75);
             var cube = new Cube(0, 50, -200, 50);
             var shadedRectangle = new ShadedRectangle(150, 100);
@@ -72,7 +74,9 @@ namespace Lab3.View
             {
                 image.Move(x, y);
             }
+
             imageDrawer.Draw(image);
+            
         }
 
         private void Clear()

@@ -2,8 +2,11 @@
 
 namespace Lab3.Shapes.TwoDimensional
 {
+    [Serializable]
     public class ShadedRectangle : Rectangle, ITwoDimensionalShape, IShadedShape
     {
+        public ShadedRectangle() { }
+
         public ShadedRectangle(float length, float width) 
         : base(length, width) {}
 

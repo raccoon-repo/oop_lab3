@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Lab3.Vertices
 {
+    [Serializable]
     public class VertexConnections
     {
         private Vertex[] _vertices;
