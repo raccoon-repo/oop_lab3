@@ -32,6 +32,11 @@ namespace Lab3.Images
             Y = y;
         }
 
+        public Image()
+        {
+            Shapes = new List<AngularShape>();
+        }
+
         public void AddShape(AngularShape shape)
         {
             Shapes.Add(shape);

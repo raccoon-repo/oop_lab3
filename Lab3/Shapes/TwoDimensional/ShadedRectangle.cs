@@ -10,7 +10,7 @@ namespace Lab3.Shapes.TwoDimensional
         public ShadedRectangle(float length, float width) 
         : base(length, width) {}
 
-        public ShadedRectangle(float x, float y, float z, float length, float width) 
+        public ShadedRectangle(float x, float y, float length, float width) 
         : base(x, y, length, width) { }
         
     }

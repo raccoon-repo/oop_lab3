@@ -52,13 +52,13 @@ namespace Lab3.Shapes.TwoDimensional
                     new Vertex { X = x, Y = y, Z = 0 },
                     new Vertex { X = x, Y = y + length, Z = 0 },
                     new Vertex { X = x + length, Y = y + length, Z = 0 },
-                    new Vertex { X = x + length, Y = y + length, Z = 0 }
+                    new Vertex { X = x + length, Y = y, Z = 0 }
                 },
 
                 Connections = new Dictionary<byte, byte[]>(4)
                 {
                     {0, new byte[] {1,3} }, {1, new byte[] {0, 2} },
-                    {2, new byte[] {1,3} }, {3, new byte[] {1, 2}}
+                    {2, new byte[] {1,3} }, {3, new byte[] {0, 2}}
                 }
             };
         }

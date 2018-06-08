@@ -4,7 +4,6 @@ using Lab3.Shapes.ThreeDimensional;
 using Lab3.Shapes.TwoDimensional;
 using System;
 using Lab3.Images;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Lab3.Images.Drawers;
 
@@ -18,13 +17,14 @@ namespace Lab3.View
         private System.Drawing.Graphics graphics;
         private ImageDrawer imageDrawer;
         AngularShape shape;
+        Image image;
 
         public Form1()
         {
             
             InitializeComponent();
 
-            graphics = CreateGraphics();
+            graphics = panel1.CreateGraphics();
             var pen = new System.Drawing.Pen(System.Drawing.Color.Black);
 
             twoDimensional = new TwoDimensionalDrawer() {
@@ -46,43 +46,166 @@ namespace Lab3.View
                 TwoDimensionalDrawer = twoDimensional,
                 ShadedRectangleDrawer = shadedRectangleDrawer
             };
+
+            image = new Image();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Clear();
-            float x, y, z;
-            var xParse = float.TryParse(textBox1.Text, out x);
-            var yParse = float.TryParse(textBox2.Text, out y);
-            var zParse = float.TryParse(textBox3.Text, out z);
-            
-            var pyramid = new Pyramid(10, 200, -120, 100, 75, 75);
-            var cube = new Cube(0, 50, -200, 50);
-            var shadedRectangle = new ShadedRectangle(150, 100);
-            var paralellepiped = new RectangularParallelepiped(0, 400, -120, 100, 200, 50);
-
-
-            var image = new Image()
-            {
-                Shapes = new List<AngularShape>()
-                {
-                    pyramid, cube, shadedRectangle, paralellepiped
-                }
-            };
-
-            if (xParse && yParse)
-            {
-                image.Move(x, y);
-            }
-
-            imageDrawer.Draw(image);
-            
-        }
 
         private void Clear()
         {
             var pen = new System.Drawing.Pen(System.Drawing.Color.White);
             graphics.Clear(System.Drawing.Color.White);
+        }
+
+        private void DrawRectangle_Click(object sender, EventArgs e)
+        {
+            var widthS = RectangleW.Text;
+            var lengthS = RectangleL.Text;
+            var offsetXS = RectangleX.Text;
+            var offsetYS = RectangleX.Text;
+            float offsetX, offsetY;
+
+            if (!float.TryParse(widthS, out var width))
+                return;
+            if (!float.TryParse(lengthS, out var length))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+
+            image.AddShape(new Rectangle(offsetX, offsetY, length, width));
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+        private void DrawSquare_Click(object sender, EventArgs e)
+        {
+            var lengthS = SquareL.Text;
+            var offsetYS = SquareY.Text;
+            var offsetXS = SquareX.Text;
+            float offsetX, offsetY;
+
+            if (!float.TryParse(lengthS, out var length))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+
+            image.AddShape(new Square(offsetX, offsetY, length));
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+
+        private void DrawCubeBtn_Click(object sender, EventArgs e)
+        {
+            var lengthS = CubeL.Text;
+            var offsetXS = CubeX.Text;
+            var offsetYS = CubeY.Text;
+            var offsetZS = CubeZ.Text;
+            float offsetX, offsetY, offsetZ;
+
+
+            if (!float.TryParse(lengthS, out var length))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+            if (!float.TryParse(offsetZS, out offsetZ))
+                offsetZ = 0;
+
+            image.AddShape(new Cube(offsetX, offsetY, offsetZ, length));
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+        private void DrawParal_Click(object sender, EventArgs e)
+        {
+            var widthS = ParalW.Text;
+            var lengthS = ParalL.Text;
+            var heightS = ParalH.Text;
+            var offsetXS = ParalX.Text;
+            var offsetYS = ParalY.Text;
+            var offsetZS = ParalZ.Text;
+            float offsetX, offsetY, offsetZ;
+
+            if (!float.TryParse(widthS, out var width))
+                return;
+            if (!float.TryParse(lengthS, out var length))
+                return;
+            if (!float.TryParse(heightS, out var height))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+            if (!float.TryParse(offsetZS, out offsetZ))
+                offsetZ = 0;
+
+            image.AddShape(new RectangularParallelepiped(offsetX, offsetY, offsetZ,
+                                                         length, width, height));
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+        private void DrawPyramid_Click(object sender, EventArgs e)
+        {
+            var widthS = PyramidW.Text;
+            var lengthS = PyramidL.Text;
+            var heightS = PyramidH.Text;
+            var offsetXS = PyramidX.Text;
+            var offsetYS = PyramidY.Text;
+            var offsetZS = PyramidZ.Text;
+            float offsetX, offsetY, offsetZ;
+
+            if (!float.TryParse(widthS, out var width))
+                return;
+            if (!float.TryParse(lengthS, out var length))
+                return;
+            if (!float.TryParse(heightS, out var height))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+            if (!float.TryParse(offsetZS, out offsetZ))
+                offsetZ = 0;
+
+            image.AddShape(new Pyramid(offsetX, offsetY, offsetZ,
+                                       width, length, height));
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+        private void DrawShadedRectangleBtn_Click(object sender, EventArgs e)
+        {
+            var widthS = ShRectangleW.Text;
+            var lengthS = ShRectangleL.Text;
+            var offsetXS = ShRectangleX.Text;
+            var offsetYS = ShRectangleX.Text;
+            float offsetX, offsetY;
+
+            if (!float.TryParse(widthS, out var width))
+                return;
+            if (!float.TryParse(lengthS, out var length))
+                return;
+
+            if (!float.TryParse(offsetYS, out offsetY))
+                offsetY = 0;
+            if (!float.TryParse(offsetXS, out offsetX))
+                offsetX = 0;
+
+            image.AddShape(new ShadedRectangle(offsetX, offsetY, length, width));
+            Clear();
+            imageDrawer.Draw(image);
         }
     }
 }
