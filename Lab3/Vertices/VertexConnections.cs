@@ -3,29 +3,26 @@ using System.Collections.Generic;
 
 namespace Lab3.Vertices
 {
-    [Serializable]
     public class VertexConnections
     {
-        private Vertex[] _vertices;
 
         /**
          * Key - number of vertex
          * Value - array of connected vertecies
          */
-        private IDictionary<byte, byte[]> _connections;
+        public IDictionary<byte, List<byte>> Connections { get; set; }
 
-        public Vertex[] Vertices { get; set; }
-        public IDictionary<byte, byte[]> Connections { get; set; }
+        public IList<Vertex> Vertices { get; set; }
 
         public Vertex this[byte index]
         {
-            get => _vertices[index]; 
-            set => _vertices[index] = value; 
+            get => Vertices[index]; 
+            set => Vertices[index] = value; 
         }
 
-        public byte[] GetConnections(byte vertexNumber)
+        public List<byte> GetConnections(byte vertexNumber)
         {
-            if (_connections.TryGetValue(vertexNumber, out byte[] result))
+            if (Connections.TryGetValue(vertexNumber, out var result))
                 return result;
             return null;
         }

@@ -66,10 +66,10 @@ namespace Lab3.Shapes.TwoDimensional
                     new Vertex { X = x + length, Y = y, Z = 0 }
                 },
 
-                Connections = new Dictionary<byte, byte[]>(4)
+                Connections = new Dictionary<byte,  List<byte>>(4)
                 {
-                    {0, new byte[] {1,3} }, {1, new byte[] {0, 2} },
-                    {2, new byte[] {1,3} }, {3, new byte[] {0, 2}}
+                    {0, new List<byte>() {1,3} }, {1, new List<byte>() {0, 2} },
+                    {2, new List<byte>() {1,3} }, {3, new List<byte>() {0, 2}}
                 }
             };
 

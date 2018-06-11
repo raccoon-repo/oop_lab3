@@ -1,19 +1,20 @@
 ﻿using Lab3.Drawers;
 using Lab3.Vertices;
 using System;
+using System.Xml.Serialization;
 
 namespace Lab3.Shapes
 {
-    [Serializable]
     public abstract class AngularShape
     {
+
         public IDrawer Drawer { get; set; }
         private VertexConnections vertices = new VertexConnections();
-        public bool IsShaded { get; protected set; }
+        public bool IsShaded { get; set; }
         public VertexConnections Vertices
         {
             get => vertices;
-            protected set => vertices = value;
+            set => vertices = value;
         }
         
         public void Draw()

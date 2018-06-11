@@ -96,11 +96,11 @@ namespace Lab3.Shapes.ThreeDimensional
                     }
                 },
 
-                Connections = new Dictionary<byte, byte[]>()
+                Connections = new Dictionary<byte, List<byte>>()
                 {
-                    {0, new byte[] {1, 3, 4} }, {1, new byte[] {0, 2, 4} },
-                    {2, new byte[] {1, 3, 4} }, {3, new byte[] {0, 2, 4 }},
-                    {4, new byte[] {0, 1, 2, 3}}
+                    {0, new List<byte>() {1, 3, 4} }, {1, new List<byte>() {0, 2, 4} },
+                    {2, new List<byte>() {1, 3, 4} }, {3, new List<byte>() {0, 2, 4 }},
+                    {4, new List<byte>() {0, 1, 2, 3}}
                 }
             };
         }

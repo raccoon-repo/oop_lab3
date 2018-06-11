@@ -738,6 +738,7 @@
             this.NewImgBtn.TabIndex = 1;
             this.NewImgBtn.Text = "New Image";
             this.NewImgBtn.UseVisualStyleBackColor = true;
+            this.NewImgBtn.Click += new System.EventHandler(this.NewImgBtn_Click);
             // 
             // SaveImgBtn
             // 
@@ -747,6 +748,7 @@
             this.SaveImgBtn.TabIndex = 2;
             this.SaveImgBtn.Text = "Save Image";
             this.SaveImgBtn.UseVisualStyleBackColor = true;
+            this.SaveImgBtn.Click += new System.EventHandler(this.SaveImgBtn_Click);
             // 
             // LoadLastBtn
             // 
@@ -756,6 +758,7 @@
             this.LoadLastBtn.TabIndex = 3;
             this.LoadLastBtn.Text = "Load";
             this.LoadLastBtn.UseVisualStyleBackColor = true;
+            this.LoadLastBtn.Click += new System.EventHandler(this.LoadLastBtn_Click);
             // 
             // panel1
             // 

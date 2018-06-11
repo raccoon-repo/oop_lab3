@@ -6,6 +6,9 @@ using System;
 using Lab3.Images;
 using System.Windows.Forms;
 using Lab3.Images.Drawers;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace Lab3.View
 {
@@ -16,8 +19,9 @@ namespace Lab3.View
         private ShadedRectangleDrawer shadedRectangleDrawer;
         private System.Drawing.Graphics graphics;
         private ImageDrawer imageDrawer;
-        AngularShape shape;
-        Image image;
+        private Image image;
+        private IImageSerializator imageSerializator;
+        private static string projectDir = GetProjectDirectory();
 
         public Form1()
         {
@@ -47,7 +51,8 @@ namespace Lab3.View
                 ShadedRectangleDrawer = shadedRectangleDrawer
             };
 
-            image = new Image();
+            image = new Image(panel1.Height, panel1.Width);
+            imageSerializator = new XmlImageSerializator();
         }
 
 
@@ -206,6 +211,31 @@ namespace Lab3.View
             image.AddShape(new ShadedRectangle(offsetX, offsetY, length, width));
             Clear();
             imageDrawer.Draw(image);
+        }
+
+        private void NewImgBtn_Click(object sender, EventArgs e)
+        {
+            image = new Image(panel1.Height, panel1.Width);
+            Clear();
+        }
+
+        private void SaveImgBtn_Click(object sender, EventArgs e)
+        {
+            imageSerializator.Serialize($"{projectDir}\\out\\image.xml", image);
+        }
+
+        private void LoadLastBtn_Click(object sender, EventArgs e)
+        {
+            image = imageSerializator.Deserialize($"{projectDir}\\out\\image.xml");
+            Clear();
+            imageDrawer.Draw(image);
+        }
+
+        private static string GetProjectDirectory()
+        {
+            string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Regex regex = new Regex("\\\\bin\\\\Debug$");
+            return regex.Replace(dir, "");
         }
     }
 }

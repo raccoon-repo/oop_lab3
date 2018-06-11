@@ -1,18 +1,22 @@
 ﻿using Lab3.Drawers;
 using Lab3.Shapes;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Lab3.Images
 {
     public class Image
     {
-        public IList<AngularShape> Shapes;
+        public List<AngularShape> Shapes;
 
         public string Name { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
         public float Width { get; set; }
-        public float Height { get; set; }
+        public float Length { get; set; }
 
 
         public void Move(float x, float y)
@@ -37,6 +41,13 @@ namespace Lab3.Images
             Shapes = new List<AngularShape>();
         }
 
+        public Image(float length, float width)
+        {
+            Length = length;
+            Width = width;
+            Shapes = new List<AngularShape>();
+        }
+
         public void AddShape(AngularShape shape)
         {
             Shapes.Add(shape);
@@ -55,8 +66,7 @@ namespace Lab3.Images
             }
 
             Width = Width * fraction;
-            Height = Height * fraction;
+            Length = Length * fraction;
         }
-
     }
 }

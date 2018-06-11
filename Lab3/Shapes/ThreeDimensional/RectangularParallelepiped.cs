@@ -67,12 +67,12 @@ namespace Lab3.Shapes.ThreeDimensional
 
             Vertices = new VertexConnections
             {
-                Connections = new Dictionary<byte, byte[]>(8)
+                Connections = new Dictionary<byte, List<byte>>(8)
                 {
-                    {0, new byte[] {1, 3, 4} }, {1, new byte[] {0, 2, 5} },
-                    {2, new byte[] {1, 3, 6} }, {3, new byte[] {0, 2, 7} },
-                    {4, new byte[] {0, 5, 7} }, {5, new byte[] {1, 4, 6} },
-                    {6, new byte[] {2, 5, 7} }, {7, new byte[] {3, 4, 6} }
+                    {0, new List<byte>() {1, 3, 4} }, {1, new List<byte>() {0, 2, 5} },
+                    {2, new List<byte>() {1, 3, 6} }, {3, new List<byte>() {0, 2, 7} },
+                    {4, new List<byte>() {0, 5, 7} }, {5, new List<byte>() {1, 4, 6} },
+                    {6, new List<byte>() {2, 5, 7} }, {7, new List<byte>() {3, 4, 6} }
                 },
 
                 Vertices = new Vertex[8]

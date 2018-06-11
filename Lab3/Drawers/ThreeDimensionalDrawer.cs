@@ -50,7 +50,7 @@ namespace Lab3.Drawers
             PointF p1, p2;
             Vertex v1, v2;
 
-            for (byte i = 0; i < vertices.Length; i++)
+            for (byte i = 0; i < vertices.Count; i++)
             {
                 v1 = vertices[i];
 
